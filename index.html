@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Viking History Timeline</title>
+  <script type = "text/javascript" src="timelineMap.js"> </script>
+  <script src="http://visjs.org/dist/vis.js"></script>
+  <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script> 
+  <link href="timelineMap.css" rel="stylesheet" type="text/css" />
+  <link href="http://visjs.org/dist/vis.css" rel="stylesheet" type="text/css" />
+ </head>
+
+
+<body>
+<div id="outer">
+	<div id="topbar" align="center">
+		<span id="title">Interactive Timeline of Viking History</span><!--make a topbar-->
+	</div>
+
+	<div class="mapHolder" align="center">
+		<img id="myMap" src="2.jpg" alt="Old World Map"></img>	
+
+		
+        <!--<br /><span id="log"></span>-->
+	</div>
+
+	<img src="arrowLeft.ico" id="moveLeft" alt="Move Timeline Left"/>
+	<img src="arrowRight.ico" id="moveRight" alt="Move Timeline Right"/>	
+
+	
+	<span id="timelineHolder">
+		<div id="myTimeline"></div>
+		<div id="outputDiv"></div>
+	</span>
+	
+	<!--<div id="log"></div>-->
+</div>
+
+
+</body>
+</html>
