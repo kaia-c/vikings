@@ -222,7 +222,7 @@ function init(){
 			//if 'point'+id in visible date range
 		if ((startYear <= data[id-1].end && endYear >= data[id-1].start) && document.getElementById('point'+id)==null){
 			//make map pointer img id=point'+id+'
-			$("#myMap").after('<img id="point'+id+'" class="point" src="MapMarker.ico" style="position:absolute;display:block;left:'
+			$("#myMap").after('<img id="point'+id+'" class="point" src="https://cloud.githubusercontent.com/assets/8033784/3484812/c599a466-03b6-11e4-9125-2f7ba31c2ea7.png" style="position:absolute;display:block;left:'
 			+pointLeft+'px;top:'+pointTop+'px;"/>');
 			$("#point"+id).hide().fadeIn(200);
 			//else if out of range remove point'+id+' 
