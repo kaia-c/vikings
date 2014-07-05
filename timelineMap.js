@@ -75,7 +75,7 @@ function init(){
   	//set initial range ...plugins setWindow function appears not to work well 
 	//before 1900 AD. Trying to work around to get data range early as possible,
 	//this yields 190 - 250 AD
-	timeline.setWindow({start:'-0220', end: '-0100',});
+	//timeline.setWindow({start:'-0220', end: '-0100',});
 
 	//function moves timeline by the argument of percentage
 	function move (percentage) {
@@ -275,7 +275,7 @@ function init(){
 	  }); 
 	}
 	
-	/*messes things up in ie & moz I have to rewirte my own if I want to do this
+	/*
 	//generalize maybe later
 	function makeIntialPoints(startYear, endYear){
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
