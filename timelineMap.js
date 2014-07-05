@@ -259,9 +259,11 @@ function init(){
 		}
 		//if points are hovered, 
 		makeHoverTitle(pointTop, pointLeft);
-		//if point'+id+' is clicked, makeInfoBox
+		//if point'+id+' is clicked, makeInfoBox and highlight selection on timeline
 		$("#point"+id).click(function(){
 			makeInfoBox(id, pointTop, pointLeft);
+			var idList=[id];
+			timeline.setSelection(idList);
 		});//if corresponding timeline element is clicked, makeInfoBox
 		timeline.on('select', function (properties) {
 			if (properties.items == id ){
