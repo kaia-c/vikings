@@ -1,74 +1,88 @@
-  body, html {
+body, html {
 		font-family: sans-serif;
 		background-color: #FFFFFF;
-    }
-	#myTimeline {
+}
+#myTimeline {
 		background-color: #5F9EA0;
 		box-shadow: 5px 10px 20px #555555
-	}
-	#timelineHolder {
+}
+#timelineHolder {
 		padding: 20px;
-	}
-	#title {
+}
+#title {
 		font-family: impact;
 		font-size: 32px;
 		color: #000080;
-	}
-	#topbar {
-	}
-	#myMap {
+}
+#topbar {
+}
+#myMap {
 		box-shadow: 5px 10px 20px #555555;
 		border: 1px solid grey;
 		padding: 6px;
 		width: 1200px;
 		height: 400px;
 		z-index:3;
-	}
+}
 	
-    #moveLeft{
+#moveLeft{
 		float: left;
 		width: 40px;
 		cursor:pointer;
 		position:relative;
 		padding: 14px;		
-	}
+}
 	
-	#moveRight{
+#moveRight{
 		float: right;
 		width: 40px;
 		cursor:pointer;
 		position:relative;
 		padding: 14px;	
-	}
-	#moveRight:hover{
+}
+#moveRight:hover{
 		width:44px;
-	}
-	#moveLeft:hover{
+}
+#moveLeft:hover{
 		width:44px;
-	}
-	.point:hover{
+}
+.point:hover{
 		width:52px;
 		z-index: 6;
-	}
-	.point{
+}
+.point{
 		width:50px;
 		cursor:pointer;
 		z-index: 5;
 		position: absolute;
-	}
-	.mapHolder {
+}
+.titleBox{
+		background-color: rgb(255,255,200);
+		padding: 4px;
+		z-index:7;
+		position:absolute;
+		display:block;
+		border-radius:5px;
+		border: 1px solid rgba(0,0,0,0.05);
+		box-shadow: 2px 5px 10px #111111,
+        		inset 0 2px 3px rgba(255,255,255,0.3), 
+        		inset 0 -2px 3px rgba(0,0,0,0.3),
+        		0 1px 1px rgba(255,255,255,0.9);
+		opacity: 0.7;
+}
+.mapHolder {
 		padding: 20px 60px 20px 60px;
 		position:relative;    /*relative positions behind absolute so can overlap*/
 		width: 1200px;
 		height: 400px;
 		z-index:2;
-	}
-	.mapHolder img  {
+}
+.mapHolder img  {
 		position: absolute;
 		display: block;
-	}
+}
 
-	.textHolder {
+.textHolder {
 		text-align: left;
 		background-color: rgb(255,255,200);
 		padding: 8px;
@@ -78,46 +92,46 @@
 		border-radius:5px;
 		border: 1px solid rgba(0,0,0,0.05);
 		box-shadow: 2px 5px 10px #111111,
-        inset 0 2px 3px rgba(255,255,255,0.3), 
-        inset 0 -2px 3px rgba(0,0,0,0.3),
-        0 1px 1px rgba(255,255,255,0.9);
-	}
-	.textHolder h3{
+        		inset 0 2px 3px rgba(255,255,255,0.3), 
+        		inset 0 -2px 3px rgba(0,0,0,0.3),
+        		0 1px 1px rgba(255,255,255,0.9);
+}
+.textHolder h3{
 		text-align: center;
-	}
-	.textHolder img{
+}
+.textHolder img{
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-	}
-	.textHolder figcaption{
+}
+.textHolder figcaption{
 		text-align: center;
-	}
-	#info{
+}
+#info{
 		max-height:285px;
 		overflow:auto;
-	}
-	a.boxclose{
-    float:right;
-    cursor:pointer;
-    color: #FFFFFF;
-	text-shadow: 1px 1px #302f30;
-	box-shadow:  2px 3px 16px #222222;
-    border: 1px solid black;
-    border-radius: 100px;
-    background: #000080;
-    font-size: 20px;
-    display: inline-block;
-    line-height: 0px;
-    padding: 10px 5px 10px 5px;       
+}
+a.boxclose{
+		float:right;
+		cursor:pointer;
+	    	color: #FFFFFF;
+		text-shadow: 1px 1px #302f30;
+		box-shadow:  2px 3px 16px #222222;
+	     	border: 1px solid black;
+	    	border-radius: 100px;
+	    	background: #000080;
+	    	font-size: 20px;
+	    	display: inline-block;
+	    	line-height: 0px;
+	    	padding: 10px 5px 10px 5px;       
 }
 .overlay {
-	display: block;
-	z-index: 4;
-	position: fixed;
-	width: 1200px;
-	height: 400px;
-	padding: 7px;
-	text-align: center;
-	opacity: 0.6;
+		display: block;
+		z-index: 4;
+		position: fixed;
+		width: 1200px;
+		height: 400px;
+		padding: 7px;
+		text-align: center;
+		opacity: 0.6;
 }
