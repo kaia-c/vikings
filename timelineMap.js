@@ -74,7 +74,8 @@ function init(){
 	timeline.setGroups(groups);
   	//set initial range ...plugins setWindow function appears not to work well 
 	//before 1900 AD. Trying to work around to get data range early as possible,
-	//this yields 190 - 250 AD
+	//this yields 190 - 250 AD in Chrome - NO, BREAKS IN IE & MOZ
+	//look at source for setWindow later...may have to rewrite that
 	//timeline.setWindow({start:'-0220', end: '-0100',});
 
 	//function moves timeline by the argument of percentage
@@ -276,13 +277,9 @@ function init(){
 	}
 	
 	/*
-	//generalize maybe later
+	//generalize or just load points from initial range after I make that work
 	function makeIntialPoints(startYear, endYear){
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
-		makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
-		makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
-		makeNewPoint(germanBogBods.id,  startYear, endYear, 230, 620);
-		makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
 		$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484710/18c5f59e-03b3-11e4-8b47-6c399f23d62d.png" id="overlay200" class="overlay" />');
 	}
 	
