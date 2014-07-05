@@ -72,7 +72,10 @@ function init(){
 	var timeline = new vis.Timeline(timelineHolder, data, options); 
 	//add groups
 	timeline.setGroups(groups);
-  
+  	//set initial range ...plugins setWindow function appears not to work well 
+	//before 1900 AD. Trying to work around to get data range early as possible,
+	//this yields 190 - 250 AD
+	timeline.setWindow({start:'-0220', end: '-0100',});
 
 	//function moves timeline by the argument of percentage
 	function move (percentage) {
