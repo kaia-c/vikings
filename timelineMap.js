@@ -61,11 +61,11 @@ function init(){
 	
 	//supplying options recognized by visjs jQuery timeline plugin
 	var options = {
-		min: '0000',								//first date on timeline
-		max: '1200',								//last date
+		min: '0000',					//first date on timeline
+		max: '1200',					//last date
 		zoomMax: 1000 * 60 * 60 * 24 * 365 * 120,  	//120 years in millisecs
 		zoomMin: 1000 * 60 * 60 * 24 * 365 * 60,  	//60 years in millisecs
-		orientation: 'top',							//put date labels on top
+		orientation: 'top',				//put date labels on top
 	};
    
 	//make timeline 
@@ -158,7 +158,33 @@ function init(){
 		if (startYear > 420){
 			$(".overlay").fadeOut(10).remove();
 		}
-	}		
+	}
+	
+	
+	//on hover, make #titleBox that reads data[id].content + 'Click Point for More'
+	function makeHoverTitle(pointTop, pointLeft){		
+		$(".point").hover(function(){			
+			//if point on hover id == any of the data point id's and no #info are created now,
+			for(var i=1;i<=data.length;i++){
+				if((($(this).attr('id')) == ("point"+data[i].id)) && ($("#info").length==0)){
+					//move forward point and make #titleBox
+					$(this).css("z-index", "6");
+					$("#myMap").after('<div id="titleBox" class="titleBox" style="left:0px;top:0px;">'
+					+ data[i].content + '</br>Click Point to Read More</div>');
+					//now that content is drawn to it, get titleWidth
+					var titleWidth = $("#titleBox").width();
+					//draw box in middle under '#point'+id
+					$("#titleBox").hide().css("top", pointTop+50).css("left", (pointLeft+20) - (titleWidth/2)).fadeIn(500);
+				}
+			}
+		}, function(){
+			//move back point & remove #titleBox when hover off
+			$(this).css("z-index", "5");
+			$("#titleBox").remove();
+		});
+	};
+	
+	
 	
 	function makeInfoBox(id, pointTop, pointLeft){
 		//fix any z-indexes still increased on a past click to regular values (5 normal, 6 on hover)
@@ -168,9 +194,10 @@ function init(){
 		}, function(){
 			$(this).css("z-index", "5");
 		});
-		// remove any other infoBoxes still populated
+		// remove any other #info still populated or a hovered #titleBox
 		$("#info").remove();
-		//Create infobox with id #info, class .textHolder, with top and left at first aligned with those on 'point'+id.
+		$("#titleBox").remove();
+		//Create #info box with id #info, class .textHolder, with top and left at first aligned with those on 'point'+id.
 		//give it <a>'x' in corner with id & class boxclose
 		//give it the title at data[id-1].content and the text at dataInfo[id].text.
 		$("#myMap").after('<div id="info" class="textHolder" style="left:'+pointLeft+'px;top:'+(pointTop)+'px;">'
@@ -183,7 +210,7 @@ function init(){
 		}, function(){
 			$(this).css("z-index", "10");
 		});
-		//setting up variables for the #info height & width as called a lot next
+		//now that content is drawn to it to give it a size, get #info Width/Height
 		var infoHeight = $("#info").height();
 		var infoWidth = $("#info").width();
 		//figure out which side of the map the point is on and make reorient/resize #info not overlap edges of map too much
@@ -230,6 +257,8 @@ function init(){
 			$("#point"+id).fadeOut(1000);
 			$("#point"+id).remove();
 		}
+		//if points are hovered, 
+		makeHoverTitle(pointTop, pointLeft);
 		//if point'+id+' is clicked, makeInfoBox
 		$("#point"+id).click(function(){
 			makeInfoBox(id, pointTop, pointLeft);
