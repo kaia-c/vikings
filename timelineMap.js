@@ -275,6 +275,7 @@ function init(){
 	  }); 
 	}
 	
+	/*messes things up in ie & moz I have to rewirte my own if I want to do this
 	//generalize maybe later
 	function makeIntialPoints(startYear, endYear){
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
@@ -286,7 +287,8 @@ function init(){
 	}
 	
 	makeIntialPoints('0190', '0250');
-
+	*/
+	
 	//event listener for timeline rangechange on drag of move arrow click
 	timeline.on('rangechanged', function (properties) {
 		$("#info").remove(); //get rid of any info boxes still open
