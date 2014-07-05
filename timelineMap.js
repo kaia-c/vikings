@@ -98,6 +98,7 @@ function init(){
 	//map overlay laying function
 	//doesn't work right as one big if else if (less blink on transition or overlays 
 	//staying slightly visible past desired times this way)
+	//BROKE IN IE AND MOZ FOR STARTDATE < 100...works fine on rest of dates
 	function mapOverlay(startYear, endYear){
 		if(startYear < 50){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484707/1071eaf6-03b3-11e4-8759-ce2accc5e9d3.png" id="overlay1" class="overlay" />');
