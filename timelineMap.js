@@ -274,6 +274,17 @@ function init(){
 			}
 	  }); 
 	}
+	
+	//generalize maybe later
+	function makeIntialPoints(startYear, endYear){
+		makeNewPoint(sami.id, startYear, endYear, 1, 885);
+		makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
+		makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
+		makeNewPoint(germanBogBods.id,  startYear, endYear, 230, 620);
+		makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
+	}
+	
+	makeIntialPoints('0190', '0250');
 
 	//event listener for timeline rangechange on drag of move arrow click
 	timeline.on('rangechanged', function (properties) {
