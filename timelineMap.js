@@ -175,6 +175,8 @@ function init(){
 					var titleWidth = $("#titleBox").width();
 					//draw box in middle under '#point'+id
 					$("#titleBox").hide().css("top", pointTop+50).css("left", (pointLeft+20) - (titleWidth/2)).fadeIn(500);
+					var idList=["point"+data[i].id];
+					timeline.setSelection(idList);
 				}
 			}
 		}, function(){
