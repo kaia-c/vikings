@@ -272,50 +272,51 @@ function init(){
 	  }); 
 	}
 
-timeline.on('rangechanged', function (properties) {
-	$("#info").remove(); //get rid of any info boxes still open
-	//normalize any .point with z-indexes still moved forward
-	$(".point").css("z-index", "5");
-	$(".point").hover(function(){
-		$(this).css("z-index", "6");
-	}, function(){
-		$(this).css("z-index", "5");
-	});
-	//get the startYear & endYear from timestamp translated human readable dates
-	var endDate = new Date(properties.end); 
-	var endYear = endDate.getYear() + 1900;
-	var startDate = new Date(properties.start);
-    var startYear = startDate.getYear() + 1900;
-
-	// makeNewPoint(id, startYear, endYear, pointTop[NUMBER]px, pointLeft[NUMBER]px);
-	makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
-	makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
-	makeNewPoint(swedesBC.id,  startYear, endYear, 160, 700);
-	makeNewPoint(norseBC.id,  startYear, endYear, 125, 540);
-	makeNewPoint(danesBC.id,  startYear, endYear, 185, 610);
-	makeNewPoint(romeFall.id,  startYear, endYear, 350, 651);
-	makeNewPoint(finnsBC.id,  startYear, endYear, 100, 930);	
-	makeNewPoint(daneBogBods.id,  startYear, endYear, 175, 590);
-	makeNewPoint(germanBogBods.id,  startYear, endYear, 230, 620);
-	makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
-	makeNewPoint(germanIberia.id, startYear, endYear, 375, 320);
-	makeNewPoint(sami.id, startYear, endYear, 1, 885);
-
-	//call mapOverlay
-	mapOverlay(startYear, endYear);
-}); 		
-		
- /* log I use when I need to check var values but leave commented out otherwise.
-  function logEvent(event, properties) { //trying to log to see what I'm getting exactly...
-    var log = document.getElementById('log');
-    var msg = document.createElement('div');
-    msg.innerHTML = 'event=' + JSON.stringify(event) + ', ' + 'properties.end=' + JSON.stringify(properties.end);
-    if(log.firstChild != null){
-	  log.insertBefore(msg, log.firstChild);
-    } else {
-	  log.appendChild(msg);
-	}
-  }
-  */
+	//event listener for timeline rangechange on drag of move arrow click
+	timeline.on('rangechanged', function (properties) {
+		$("#info").remove(); //get rid of any info boxes still open
+		//normalize any .point with z-indexes still moved forward
+		$(".point").css("z-index", "5");
+		$(".point").hover(function(){
+			$(this).css("z-index", "6");
+		}, function(){
+			$(this).css("z-index", "5");
+		});
+		//get the startYear & endYear from timestamp translated human readable dates
+		var endDate = new Date(properties.end); 
+		var endYear = endDate.getYear() + 1900;
+		var startDate = new Date(properties.start);
+	    	var startYear = startDate.getYear() + 1900;
+	
+		// makeNewPoint(id, startYear, endYear, pointTop[NUMBER]px, pointLeft[NUMBER]px);
+		makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
+		makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
+		makeNewPoint(swedesBC.id,  startYear, endYear, 160, 700);
+		makeNewPoint(norseBC.id,  startYear, endYear, 125, 540);
+		makeNewPoint(danesBC.id,  startYear, endYear, 185, 610);
+		makeNewPoint(romeFall.id,  startYear, endYear, 350, 651);
+		makeNewPoint(finnsBC.id,  startYear, endYear, 100, 930);	
+		makeNewPoint(daneBogBods.id,  startYear, endYear, 175, 590);
+		makeNewPoint(germanBogBods.id,  startYear, endYear, 230, 620);
+		makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
+		makeNewPoint(germanIberia.id, startYear, endYear, 375, 320);
+		makeNewPoint(sami.id, startYear, endYear, 1, 885);
+	
+		//call mapOverlay
+		mapOverlay(startYear, endYear);
+	}); 		
+			
+	 /* log I use when I need to check var values but leave commented out otherwise.
+	  function logEvent(event, properties) { //trying to log to see what I'm getting exactly...
+	    var log = document.getElementById('log');
+	    var msg = document.createElement('div');
+	    msg.innerHTML = 'event=' + JSON.stringify(event) + ', ' + 'properties.end=' + JSON.stringify(properties.end);
+	    if(log.firstChild != null){
+		  log.insertBefore(msg, log.firstChild);
+	    } else {
+		  log.appendChild(msg);
+		}
+	  }
+	  */
 }
 document.addEventListener("DOMContentLoaded",init, false);
