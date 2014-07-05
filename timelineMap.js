@@ -282,6 +282,7 @@ function init(){
 		makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
 		makeNewPoint(germanBogBods.id,  startYear, endYear, 230, 620);
 		makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
+		$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484710/18c5f59e-03b3-11e4-8b47-6c399f23d62d.png" id="overlay200" class="overlay" />');
 	}
 	
 	makeIntialPoints('0190', '0250');
