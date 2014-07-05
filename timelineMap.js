@@ -99,63 +99,65 @@ function init(){
 	//doesn't work right as one big if else if (less blink on transition or overlays 
 	//staying slightly visible past desired times this way)
 	//BROKE IN IE AND MOZ FOR STARTDATE < 100...works fine on rest of dates
+	//generalize this to be able to just feed in the dates & img info after I see if need to 
+	//change on dates <100 for IE&MOZ
 	function mapOverlay(startYear, endYear){
-		if(startYear < 50){
+		if(startYear <= 50){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484707/1071eaf6-03b3-11e4-8759-ce2accc5e9d3.png" id="overlay1" class="overlay" />');
 		} else {
 			$("#overlay1").fadeOut(10).remove();
 		}
-		if (startYear > 50 && startYear < 141){
+		if (startYear > 50 && startYear <= 141){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484708/14a604b8-03b3-11e4-87d8-8463e21de9c3.png" id="overlay100" class="overlay" />');
 		} else {
 			$("#overlay100").fadeOut(10).remove();
 		}	
-		if (startYear > 141 && startYear < 241){
+		if (startYear > 141 && startYear <= 241){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484710/18c5f59e-03b3-11e4-8b47-6c399f23d62d.png" id="overlay200" class="overlay" />');
 		} else {
 			$("#overlay200").fadeOut(10).remove();
 		}
-		if (startYear > 241 && startYear < 302){
+		if (startYear > 241 && startYear <= 302){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484712/1c079ffa-03b3-11e4-9879-1926360fbbd6.png" id="overlay300" class="overlay" />');
 		} else {
 			$("#overlay300").fadeOut(10).remove();
 		}
-		if (startYear > 302 && startYear < 351){
+		if (startYear > 302 && startYear <= 351){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484713/1e0199fa-03b3-11e4-828f-f3bb9872a19d.png" id="overlay361" class="overlay" />');
 		} else {
 			$("#overlay361").fadeOut(10).remove();
 		}
-		if (startYear > 351 && startYear < 361){
+		if (startYear > 351 && startYear <= 361){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484715/2481223c-03b3-11e4-9934-e53a9c75ccb9.png" id="overlay410" class="overlay" />');
 		} else {
 			$("#overlay410").fadeOut(10).remove();
 		}
-		if (startYear > 361 && startYear < 384){
+		if (startYear > 361 && startYear <= 384){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484716/29c46f06-03b3-11e4-8080-c06223d0d4d3.png" id="overlay420" class="overlay" />');
 		} else {
 			$("#overlay420").fadeOut(10).remove();
 		}
-		if (startYear > 384 && startYear < 392){
+		if (startYear > 384 && startYear <= 392){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484717/2fa73d2c-03b3-11e4-9545-ae3141a626cf.png" id="overlay443" class="overlay" />');
 		} else {
 			$("#overlay443").fadeOut(10).remove();
 		}
-		if (startYear > 392 && startYear < 394){
+		if (startYear > 392 && startYear <= 394){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484718/374f6f54-03b3-11e4-85e8-c926d46dec28.png" id="overlay451" class="overlay" />');
 		} else {
 			$("#overlay451").fadeOut(10).remove();
 		}
-		if (startYear > 394 && startYear < 400){
+		if (startYear > 394 && startYear <= 400){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484720/3da72b8a-03b3-11e4-98d6-910a98ad8055.png" id="overlay453" class="overlay" />');
 		} else {
 			$("#overlay453").fadeOut(10).remove();
 		}
-		if (startYear > 400 && startYear < 410){
+		if (startYear > 400 && startYear <= 410){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484721/4306b2a8-03b3-11e4-8809-a5e262417595.png" id="overlay459" class="overlay" />');
 		} else {
 			$("#overlay459").fadeOut(10).remove();
 		}
-		if (startYear > 410 && startYear < 420){
+		if (startYear > 410 && startYear <= 420){
 			$("#myMap").before('<img src="https://cloud.githubusercontent.com/assets/8033784/3484722/5306e7fe-03b3-11e4-853b-473d7c64a2c0.png" id="overlay469" class="overlay" />');
 		} else {
 			$("#overlay469").fadeOut(10).remove();
