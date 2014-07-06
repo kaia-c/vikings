@@ -323,8 +323,8 @@ function init(){
 		makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
 		makeNewPoint(germanIberia.id, startYear, endYear, 375, 320);
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
-		makeNewPoint(germanChanges.id, startYear, endYear, 250, 655);
-		makeNewPoint(romeLostBlSea.id, startYear, endYear, 300, 850); 
+		makeNewPoint(germanChanges.id, startYear, endYear, 275, 655);
+		makeNewPoint(romeLostBlSea.id, startYear, endYear, 290, 850); 
 		//call mapOverlay
 		mapOverlay(startYear, endYear);
 	}); 		
