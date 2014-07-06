@@ -40,6 +40,7 @@ function init(){
 	var sami = new dataPoint(sc, 'The Sami', '0000', '1199');
 	var germanChanges =  new dataPoint(ga, 'Roman Influence on Germanic Tribes', '0000', '0200');
 	var romeLostBlSea = new dataPoint(nw, 'Rome Withdraws from North Black Sea', '0271', '0281');
+	var romeDivides = new dataPoint(sc, 'East-West Division of Rome', '292', '330');
 
 
 	//creating dataInfo array (with 1 empty string already in it so array index of
@@ -63,6 +64,9 @@ function init(){
 	var text12 = new dataInfoText('<ul><li>The Sami are an indigionous people who settled in Northern Scandinavia after the retreat of the last glaciers.</li><li>The traditional Sami life style, dominated by hunting, fishing and trading, stayed much the same from perhapse 8000 BC-1800 AD, well beyond the scope of this timeline.</li><li>Many believe they are an offshoot of the same mainly Germanic tribes that settled Southen Scandinavia, but this is uncertain. It appears genetically the Sami are a mix of old Asian and European lines, although Asian peoples are not known to have migrated to the area and other pieces of the Sami genome are entirely unique. They are a frequntly studied population for geneticists.</li><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Saami_Family_1900.jpg/350px-Saami_Family_1900.jpg" width="300" height="250"><figcaption>Sami Family, Northern Norway, appx 1900 AD</figcaption></a>');    
 	var text13 = new dataInfoText('The German tribes along the Roman frontier may have resisted Roman rule, but still saw great changes in their way of life. Trade across the frontier led to divergences in wealth within their previously egalitarian communities. At the same time, the constant battles with both from the Roman army and other Germanic tribes militarized society.');
 	var text14 = new dataInfoText('Romans withdraw from the north Black Sea area, due to threats from Huns, Gemanics, Alans, and others');
+	var text15 = new dataInfoText('<ul><li><b>In 292, </b>Roman Emperor Diocletian divides the empire into East (Greek speaking) & West (Latin speaking), as part of resolving internal wars and as administrating and protecting the massive landmass out of one city was hard.</li><li><b>In 330,</b> Constantine re-establishes the east-west division of Rome. He assumes reign of the Eastern Empire, changing the name of the eastern capitol city Byzantium to Constantinople.');
+	
+	
 	
 	//supplying options recognized by visjs jQuery timeline plugin
 	var options = {
@@ -324,7 +328,9 @@ function init(){
 		makeNewPoint(germanIberia.id, startYear, endYear, 375, 320);
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
 		makeNewPoint(germanChanges.id, startYear, endYear, 275, 655);
-		makeNewPoint(romeLostBlSea.id, startYear, endYear, 290, 820); 
+		makeNewPoint(romeLostBlSea.id, startYear, endYear, 300, 820); 
+		makeNewPoint(romeDivides.id, startYear, endYear, 375, 880);
+		
 		//call mapOverlay
 		mapOverlay(startYear, endYear);
 	}); 		
