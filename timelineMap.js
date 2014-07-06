@@ -329,7 +329,7 @@ function init(){
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
 		makeNewPoint(germanChanges.id, startYear, endYear, 275, 655);
 		makeNewPoint(romeLostBlSea.id, startYear, endYear, 300, 820); 
-		makeNewPoint(romeDivides.id, startYear, endYear, 375, 880);
+		makeNewPoint(romeDivides.id, startYear, endYear, 360, 880);
 		
 		//call mapOverlay
 		mapOverlay(startYear, endYear);
