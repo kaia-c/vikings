@@ -39,7 +39,7 @@ function init(){
     	var germanIberia = new dataPoint(ga, 'Germainic Invasion of Iberia','0410','0510');
 	var sami = new dataPoint(sc, 'The Sami', '0000', '1199');
 	var germanChanges =  new dataPoint(ga, 'Roman Influence on Germanic Tribes', '0000', '0200');
-	var romeLostBlSea = new dataPoint(nw, 'Rome Withdraws from North Black Sea');
+	var romeLostBlSea = new dataPoint(nw, 'Rome Withdraws from North Black Sea', '0271', '0281');
 
 
 	//creating dataInfo array (with 1 empty string already in it so array index of
