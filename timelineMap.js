@@ -38,6 +38,9 @@ function init(){
     	var romanInfl = new dataPoint(sc,'Roman Cultural Influence in Scandinavia','0100','0250');
     	var germanIberia = new dataPoint(ga, 'Germainic Invasion of Iberia','0410','0510');
 	var sami = new dataPoint(sc, 'The Sami', '0000', '1199');
+	var germanChanges =  new dataPoint(ga, 'Roman Influence on Germanic Tribes', '0000', '0200');
+	var romeLostBlSea = new dataPoint(nw, 'Rome Withdraws from North Black Sea');
+
 
 	//creating dataInfo array (with 1 empty string already in it so array index of
 	//objects pushed in matches data.id) and a constructor
@@ -58,6 +61,8 @@ function init(){
 	var text10 = new dataInfoText('<ul><li>From <b>100 AD</b>, a cultural influence from the Roman Empire took place.</li><li>Trading in largely furs and skins in exchange for luxury goods occured.</li><li>Some Scandinavians also served as Roman mercenaries.</li><li>In mimicing the path of Roman culture, some of the most powerful Norse farmers became chieftains. They functioned as priests and accepted sacrifices from farmers which were again used to pay soldiers. They would obtain a group of soldiers to protect lands called a hird. Thus they were able to rule an area of several settlements and tribes.</li></ul>');
 	var text11 = new dataInfoText('During the Germanic Invasions of the Iberian Peninsula, the area was conquered by the Suebi, a Germanic people from Central Europe. In 410, the Suebi established a Kingdom in northwest Iberia, which they maintained as Gallaecia, and made Bracara their capital');
 	var text12 = new dataInfoText('<ul><li>The Sami are an indigionous people who settled in Northern Scandinavia after the retreat of the last glaciers.</li><li>The traditional Sami life style, dominated by hunting, fishing and trading, stayed much the same from perhapse 8000 BC-1800 AD, well beyond the scope of this timeline.</li><li>Many believe they are an offshoot of the same mainly Germanic tribes that settled Southen Scandinavia, but this is uncertain. It appears genetically the Sami are a mix of old Asian and European lines, although Asian peoples are not known to have migrated to the area and other pieces of the Sami genome are entirely unique. They are a frequntly studied population for geneticists.</li><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Saami_Family_1900.jpg/350px-Saami_Family_1900.jpg" width="300" height="250"><figcaption>Sami Family, Northern Norway, appx 1900 AD</figcaption></a>');    
+	var text13 = new dataInfoText('The German tribes along the Roman frontier may have resisted Roman rule, but still saw great changes in their way of life. Trade across the frontier led to divergences in wealth within their previously egalitarian communities. At the same time, the constant battles with both from the Roman army and other Germanic tribes militarized society.');
+	var text14 = new dataInfoText('Romans withdraw from the north Black Sea area, due to threats from Huns, Gemanics, Alans, and others');
 	
 	//supplying options recognized by visjs jQuery timeline plugin
 	var options = {
@@ -318,7 +323,8 @@ function init(){
 		makeNewPoint(romanInfl.id, startYear, endYear, 135, 635);
 		makeNewPoint(germanIberia.id, startYear, endYear, 375, 320);
 		makeNewPoint(sami.id, startYear, endYear, 1, 885);
-	
+		makeNewPoint(germanChanges.id, startYear, endYear, 250, 615);
+		makeNewPoint(romeLostBlSea.id, startYear, endYear, 300, 850); 
 		//call mapOverlay
 		mapOverlay(startYear, endYear);
 	}); 		
