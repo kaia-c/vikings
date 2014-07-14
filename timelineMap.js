@@ -41,6 +41,9 @@ function init(){
 	var germanChanges =  new dataPoint(ga, 'Roman Influence on Germanic Tribes', '0000', '0200');
 	var romeLostBlSea = new dataPoint(nw, 'Rome Withdraws from North Black Sea', '0271', '0281');
 	var romeDivides = new dataPoint(sc, 'East-West Division of Rome', '292', '330');
+	var huns370To433 = new dataPoint(nw, 'The Huns Move Into Europe', '0370','0433');
+	var huns434To449 = new dataPoint(nw, 'Huns Sack East</br>Rome', '0434','0449');
+	var huns450To469 = new dataPoint(nw, 'Fall of the Huns', '450', '469');
 
 
 	//creating dataInfo array (with 1 empty string already in it so array index of
@@ -65,7 +68,10 @@ function init(){
 	var text13 = new dataInfoText('The German tribes along the Roman frontier may have resisted Roman rule, but still saw great changes in their way of life. Trade across the frontier led to divergences in wealth within their previously egalitarian communities. At the same time, the constant battles with both from the Roman army and other Germanic tribes militarized society.');
 	var text14 = new dataInfoText('Romans withdraw from the north Black Sea area, due to threats from Huns, Gemanics, Alans, and others');
 	var text15 = new dataInfoText('<ul><li><b>In 292, </b>Roman Emperor Diocletian divides the empire into East (Greek speaking) & West (Latin speaking), as part of resolving internal wars and as administrating and protecting the massive landmass out of one city was hard.</li><li><b>In 330,</b> Constantine re-establishes the east-west division of Rome. He assumes reign of the Eastern Empire, changing the name of the eastern capitol city Byzantium to Constantinople.');
-
+	var text16 = new dataInfoText('<ul><li>The Huns were nomads from the Central Asian Steppes, but their exact Origins of the Huns remain a mystery. It is often said that they were remnants of the Xiong Nu, a tribe decimated by the Chinese, but some linguistic and other evidence disagrees. It appears local outcasts may have joined the Huns on their journeys, so they may have been composed of many races.</li><li>It is believed the Huns settled northwest of the Caspian Sea sometime in the <b>3rd Centrury.</b></li>In <b>370 AD</b> the Huns destroyed the neghboring Alans.</li><li>They continued westward and destroyed the Ostrogothic kingdom of Eramanarich.</li><li>Another Hun force crossed the Caucasus and ravaged Armenia, penetrating as far as Syria.</li><li>Widespread panic overtook Europe.</li></ul>');
+	var text17 = new dataInfoText("<ul><li>Rua became king of the Huns around <b>430 AD.</b> He planned a massive invasion of Eastern Rome before he died when he was suddenly struck by lightning.</li><li>Rua's nephews, Attila and Bleda took the throne of the Huns in dual kingship. Attila forced Eastern Rome to sign the treaty of Margus, in which the Romans were to pay 700 pounds of gold in tribute each year.</li><li>When Rome failed to make their treaty payments, Attila's and his men poured into the Eastern Roman Empire. Cities including Margus, Singidunum (Belgrade), and Viminacium were destroyed.</li><li><b>In 443</b> Attila penetrated southwest and sacked important cities such as Sardica, Philippopolis, and Arcadiopolis before reaching Constantinople and defeated the Imperial army in the outskirts of the city. The walled city of Constantinople was well defended, so Attila continued his path of destruction to Chersonesus, where the remaining Roman military was nearly destroyed.</li><li>The Tribute was settled. The Romans were to immediately pay 6000 pounds of gold, plus a yearly tribute of 2100 pounds of gold, and all prisoners were to be released. The Peace of Anatolius (the mediator of the treaty negotiation) was signed in autumn <b>443</b> and Attila and his Huns returned north of the Danube, victorious and with an enormous amount of plunder.</li><li><b>In 445,</b> King Bleda died, giving Attila the uncontested throne.</li><li><b>In 447</b> Attila again attacked Eastern Rome, taking the Balkans.</li><li>He this entered Thrance and destroyed at least 70 cities and town, Marcianople being the largest.</li><li>To end hostilities, the Second Peace of Anatolius was signed, giving Attila a land section south of the Danube. The Emperor Theodosius failed at an attempt to have Attila assassinated before agreeing to the 3rd Peace of Anatolius.</li></ul>");
+	var text18 = new dataInfoText("<ul><li><b>In 450</b>, Attila decided he would bring Western Rome, with who the Huns previously had friendly relations, into submission. Attila's army smashed through Germany, causing widespread destruction. Atilla's former friend Aetius was assigned by the Emperor to deal with the Huns. Aetius formed an alliance with his greatest enemy, the Visigothic(Germanic) King Theodoric in hopes their combined strength could finally defeat Attila.</li><li>The armies met on the Catalaunian plains with Attila's battle line contained his own Hunnic warriors in the center, with Ostrogoths and Germans at the flanks. On the other side of the Field was Aetius's army, with Romans at his left flank, Alans in the center, and Theodoric's Visigoths on the right. They fought through the day and then retreated to their camps, but the next day the Visigoths discovered that their king, Theodoric, had been killed. They surrounded Attila's camp and might have destroyed Atilla, but Aetius convinced them to allow Attila to retreat.</li><li>Eastern Rome has stopped paying their tributes again, and it was thought Attila would again head to the heart of Eastern Rome. The Huns instead crossed the Alps, and suddenly appeared in Northern Italy. The Romans were caught off guard as Attila stormed the walls of Aquileia, Vicetia, Verona, Brixia, Bergomum, and Milan. Yet soon, possibly because of an epidemic, the Huns left Italy.</li><li>Back at the Hungarian Plains, Attila died of somewhat mysterious causes. His eldest son Ellak was to succeed him, but was not widely seen as a strong leader and Attila's other sons fought him for the throne. Seeing the instability, subjects throughout Attila's kingdom started large rebellions. By 469, all of Attila's sons were killed by internal or external battles and the few remaining Huns had retreated to Scythia where they would blend with local populations.</li></ul>");
+	
 
 
 	//supplying options recognized by visjs jQuery timeline plugin
@@ -202,7 +208,7 @@ function init(){
 
 
 
-	function makeInfoBox(id, pointTop, pointLeft){
+function makeInfoBox(id, pointTop, pointLeft){
 		//fix any z-indexes still increased on a past click to regular values (5 normal, 6 on hover)
 		$(".point").css("z-index", "5");
 		$(".point").hover(function(){
@@ -216,7 +222,7 @@ function init(){
 		//Create #info box with id #info, class .textHolder, with top and left at first aligned with those on 'point'+id.
 		//give it <a>'x' in corner with id & class boxclose
 		//give it the title at data[id-1].content and the text at dataInfo[id].text.
-		$("#myMap").after('<div id="info" class="textHolder" style="left:'+pointLeft+'px;top:'+(pointTop)+'px;">'
+		$("#myMap").after('<div id="info" class="textHolder" style="left:'+pointLeft/13+'%;top:'+(pointTop)+'px;">'
 			+'<a class="boxclose" id="boxclose"><b>X</b></a>'
 			+'<h3>'+data[id-1].content+'</h3>'+dataInfo[id].text+'</div>');
 		//make the "#point"+id clicked change z-index & hover z-index to 10 so it's over #info
@@ -230,11 +236,15 @@ function init(){
 		var infoHeight = $("#info").height();
 		var infoWidth = $("#info").width();
 		//figure out which side of the map the point is on and make reorient/resize #info not overlap edges of map too much
-		if (pointLeft >= 700 && pointTop >= 250){ //right right bottom
-			$("#info").css("top", (pointTop-infoHeight)).css("left", (pointLeft-infoWidth)).css("width", infoWidth).fadeIn(500);
-		} else if (pointLeft <= 500 && pointTop < 250){ //left left top
+		if (pointLeft >= 700 && pointTop >= 250){ //right bottom
+			$("#info").css("top", (pointTop-infoHeight+10)).css("left", (pointLeft-(infoWidth*1.5))).css("width", infoWidth*1.5);
+			if(pointLeft >= 1100){	//right so far width was reduced
+				$("#info").css("width", (infoWidth*4)).css("left", (pointLeft-(infoWidth*4)-5));
+			}
 			$("#info").fadeIn(500);
-		} else if (pointLeft >= 700 && pointTop < 250){ //right right top
+		} else if (pointLeft <= 500 && pointTop < 250){ //left  top
+			$("#info").fadeIn(500);
+		} else if (pointLeft >= 700 && pointTop < 250){ //right  top
 			$("#info").css("left", (pointLeft-infoWidth)).css("width",infoWidth).fadeIn(500);
 		} else if (pointLeft < 700 && pointLeft > 500){ //middle 200px
 			if (pointTop > 250){ //bottom middle
@@ -258,7 +268,7 @@ function init(){
 			});
 		});
 	};
-
+	
 	//makeNewPoint when timeline event is within range of screen, else remove it. Call makeInfoBox if that point
 	//or corresponding timeline event is clicked.
 	function makeNewPoint(id, startYear, endYear, pointTop, pointLeft){		
@@ -266,7 +276,7 @@ function init(){
 		if ((startYear <= data[id-1].end && endYear >= data[id-1].start) && document.getElementById('point'+id)==null){
 			//make map pointer img id=point'+id+'
 			$("#myMap").after('<img id="point'+id+'" class="point" src="https://cloud.githubusercontent.com/assets/8033784/3484812/c599a466-03b6-11e4-9125-2f7ba31c2ea7.png" style="position:absolute;display:block;left:'
-			+pointLeft+'px;top:'+pointTop+'px;"/>');
+			+pointLeft/13+'%;top:'+pointTop+'px;"/>');
 			$("#point"+id).hide().fadeIn(200);
 			//else if out of range remove point'+id+' 
 		} else if ((startYear > data[id-1].end || endYear < data[id-1].start) && document.getElementById('point'+id)){
@@ -276,7 +286,7 @@ function init(){
 		//if points are hovered, 
 		makeHoverTitle(pointTop, pointLeft);
 		//if point'+id+' is clicked, makeInfoBox and highlight selection on timeline
-		$("#point"+id).click(function(){
+		$("#point"+id).click(function(){ 
 			makeInfoBox(id, pointTop, pointLeft);
 			var idList=[id];
 			timeline.setSelection(idList);
@@ -287,7 +297,7 @@ function init(){
 			}
 	  }); 
 	}
-
+	
 	/*
 	//generalize or just load points from initial range after I make that work
 	function makeIntialPoints(startYear, endYear){
@@ -297,7 +307,7 @@ function init(){
 	
 	makeIntialPoints('0190', '0250');
 	*/
-
+	
 	//event listener for timeline rangechange on drag of move arrow click
 	timeline.on('rangechanged', function (properties) {
 		$("#info").remove(); //get rid of any info boxes still open
@@ -308,12 +318,14 @@ function init(){
 		}, function(){
 			$(this).css("z-index", "5");
 		});
-		//get the startYear & endYear from timestamp translated human readable dates
+		//get the startYear & endYear from timestamp translated human readable dates 
 		var endDate = new Date(properties.end); 
-		var endYear = endDate.getYear() + 1900;
+		var endYear = (endDate.getYear()>0)? endDate.getYear() : endDate.getYear() + 1900;
 		var startDate = new Date(properties.start);
-	    	var startYear = startDate.getYear() + 1900;
-
+	    var startYear = (startDate.getYear()>0)? startDate.getYear() : startDate.getYear() + 1900;
+		if(!(startYear)){		//moz and ie read null of NaN on dates prior to 70AD, setting those to 1.
+			startYear = 1;
+		}
 		// makeNewPoint(id, startYear, endYear, pointTop[NUMBER]px, pointLeft[NUMBER]px);
 		makeNewPoint(romePeak.id,  startYear, endYear,  350, 650);
 		makeNewPoint(germanResist.id,  startYear, endYear, 240, 600);
