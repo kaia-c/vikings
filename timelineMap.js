@@ -207,8 +207,7 @@ function init(){
 	};
 
 
-
-function makeInfoBox(id, pointTop, pointLeft){
+	function makeInfoBox(id, pointTop, pointLeft){
 		//fix any z-indexes still increased on a past click to regular values (5 normal, 6 on hover)
 		$(".point").css("z-index", "5");
 		$(".point").hover(function(){
@@ -219,13 +218,10 @@ function makeInfoBox(id, pointTop, pointLeft){
 		// remove any other #info still populated or a hovered #titleBox
 		$("#info").remove();
 		$("#titleBox").remove();
-		//show corresponding timeline block selected
-		var idList=[id];
-		timeline.setSelection(idList);
 		//Create #info box with id #info, class .textHolder, with top and left at first aligned with those on 'point'+id.
 		//give it <a>'x' in corner with id & class boxclose
 		//give it the title at data[id-1].content and the text at dataInfo[id].text.
-		$("#myMap").after('<div id="info" class="textHolder" style="left:'+pointLeft/13+'%;top:'+(pointTop)+'px;">'
+		$("#myMap").after('<div id="info" class="textHolder" style="left:'+Math.floor(pointLeft/13)+'%;top:'+(pointTop)+'px;">'
 			+'<a class="boxclose" id="boxclose"><b>X</b></a>'
 			+'<h3>'+data[id-1].content+'</h3>'+dataInfo[id].text+'</div>');
 		//make the "#point"+id clicked change z-index & hover z-index to 10 so it's over #info
@@ -239,23 +235,24 @@ function makeInfoBox(id, pointTop, pointLeft){
 		var infoHeight = $("#info").height();
 		var infoWidth = $("#info").width();
 		//figure out which side of the map the point is on and make reorient/resize #info not overlap edges of map too much
-		if (pointLeft >= 700 && pointTop >= 250){ //right bottom
-			$("#info").css("top", (pointTop-infoHeight+10)).css("left", (pointLeft-(infoWidth*1.5))).css("width", infoWidth*1.5);
-			if(pointLeft >= 1100){	//right so far width was reduced
-				$("#info").css("width", (infoWidth*4)).css("left", (pointLeft-(infoWidth*4)-5));
+		if (pointLeft*(myMap.width/1200) >= (myMap.width*0.6) && pointTop >= 250){ //right bottom
+			$("#info").css("top", (pointTop-infoHeight+10)).css("left", Math.floor(pointLeft-(infoWidth*1.5))).css("width", Math.floor(infoWidth*1.5));
+			if(pointLeft*(myMap.width/1200) >= (myMap.width*0.95)){	//right so far width was reduced
+				$("#info").css("width", Math.floor(infoWidth*(1200/myMap.width)*4))
+				.css("left", pointLeft-(Math.floor(infoWidth*(1200/myMap.width)*4)));
 			}
 			$("#info").fadeIn(500);
-		} else if (pointLeft <= 500 && pointTop < 250){ //left  top
+		} else if (pointLeft*(myMap.width/1200) <= (myMap.width*0.4) && pointTop < 250){ //left  top
 			$("#info").fadeIn(500);
-		} else if (pointLeft >= 700 && pointTop < 250){ //right  top
+		} else if (pointLeft*(myMap.width/1200) >= (myMap.width*0.6) && pointTop < 250){ //right  top
 			$("#info").css("left", (pointLeft-infoWidth)).css("width",infoWidth).fadeIn(500);
-		} else if (pointLeft < 700 && pointLeft > 500){ //middle 200px
+		} else if (pointLeft*(myMap.width/1200) < (myMap.width*0.6) && pointLeft*(myMap.width/1200) > (myMap.width*0.4)){ //middle 200px
 			if (pointTop > 250){ //bottom middle
-				$("#info").css("left", (pointLeft-(infoWidth/2))).css("width",infoWidth).css("top",(pointTop-infoHeight)).fadeIn(500);
+				$("#info").css("left", Math.floor(pointLeft-(infoWidth/2))).css("width",infoWidth).css("top",(pointTop-infoHeight)).fadeIn(500);
 			} else if (pointTop < 150){ //top middle
-				$("#info").css("left", (pointLeft-(infoWidth/2))).css("width",infoWidth).css("top",(pointTop+25)).fadeIn(500);
+				$("#info").css("left", Math.floor(pointLeft-(infoWidth/2))).css("width",infoWidth).css("top",(pointTop+25)).fadeIn(500);
 			} else { //middle middle
-				$("#info").css("left", (pointLeft+32)).css("width",infoWidth-(infoWidth/8)).css("top",(pointTop-(infoHeight/2))).fadeIn(500);
+				$("#info").css("left", Math.floor(pointLeft+(myMap.width*0.0274))).css("width",infoWidth-Math.floor(infoWidth/8)).css("top",(pointTop-(infoHeight/2))).fadeIn(500);
 			}
 		} else {
 			$("#info").hide().css("top", (pointTop-infoHeight)).fadeIn(500);
@@ -271,6 +268,7 @@ function makeInfoBox(id, pointTop, pointLeft){
 			});
 		});
 	};
+
 	
 	//makeNewPoint when timeline event is within range of screen, else remove it. Call makeInfoBox if that point
 	//or corresponding timeline event is clicked.
