@@ -103,12 +103,12 @@ function init(){
 		});
 	}
 	//call move(percentage) onclick of moveLeft and right arrow images
-	document.getElementById("moveLeft").onclick =function(){ 
-		move(0.2); 
-	};
-	document.getElementById("moveRight").onclick =function(){
-		move(-0.2); 
-	};
+	$("#moveLeft").on("tap", function(){
+		move(0.12); 
+	});
+	$("#moveRight").on("tap", function(){
+		move(-0.12); 
+	});
 
 	//map overlay laying function
 	//doesn't work right as one big if else if (less blink on transition or overlays 
@@ -219,6 +219,9 @@ function makeInfoBox(id, pointTop, pointLeft){
 		// remove any other #info still populated or a hovered #titleBox
 		$("#info").remove();
 		$("#titleBox").remove();
+		//show corresponding timeline block selected
+		var idList=[id];
+		timeline.setSelection(idList);
 		//Create #info box with id #info, class .textHolder, with top and left at first aligned with those on 'point'+id.
 		//give it <a>'x' in corner with id & class boxclose
 		//give it the title at data[id-1].content and the text at dataInfo[id].text.
@@ -258,7 +261,7 @@ function makeInfoBox(id, pointTop, pointLeft){
 			$("#info").hide().css("top", (pointTop-infoHeight)).fadeIn(500);
 		}
 		//make the #boxclose corner x close #info and adjust z-index of "#point"+id back to normal on click
-		$('#boxclose').click(function(){
+		$('#boxclose').on("tap", function(){
 			$("#info").remove();
 			$("#point"+id).css("z-index", "5");
 			$("#point"+id).hover(function(){
