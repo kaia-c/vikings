@@ -349,7 +349,10 @@ function init(){
 		makeNewPoint(germanChanges.id, startYear, endYear, 275, 655);
 		makeNewPoint(romeLostBlSea.id, startYear, endYear, 300, 820); 
 		makeNewPoint(romeDivides.id, startYear, endYear, 360, 880);
-
+		makeNewPoint(huns370To433.id, startYear, endYear, 280, 1200);
+		makeNewPoint(huns434To449.id, startYear, endYear, 290, 870);
+		makeNewPoint(huns450To469.id, startYear, endYear, 300, 640);
+		
 		//call mapOverlay
 		mapOverlay(startYear, endYear);
 	}); 		
