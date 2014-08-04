@@ -43,7 +43,7 @@
 		font-weight: bold;
 		text-shadow: 6px 3px 9px rgba(0,0,0,.8);
 		font-family: serif;
-		font-size: 4em;
+		font-size: 50px;
 		font-variant:small-caps;
 		text-decoration:none;
 	}
@@ -99,8 +99,6 @@
 	#timelineHolder {
 		padding: .5% 1.5% 1% 1.5%;
 		margin: auto;
-		
-	
 	}
 	#timelineHolder div{
 		margin: auto;
@@ -242,11 +240,11 @@
         inset 0 -2px 3px rgba(0,0,0,0.3),
         0 1px 1px rgba(255,255,255,0.9);
 		opacity: 0.85;
+		overflow:auto;
 	}
 	#info{
 		max-height:65%;
 		max-width:50%;
-		overflow:auto;
 	}
 	
 	a.boxclose{
