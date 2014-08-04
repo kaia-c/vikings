@@ -2,7 +2,7 @@
 		font-family: sans-serif;
 		background-color: #FFFFFF;
     	}
-	content:ul, content:ul:ul, content:ul:ul:ul{
+	#content:ul, #content:ul:ul, #content:ul:ul:ul{
 		list-style-type: none;
 		list-style: none;
 	}
