@@ -701,7 +701,7 @@ function init(){
 				}
 			}
 			$(".siteTitle").css("font-size", "50px");
-			$(."navelt").css("font-size", "1.25em");
+			$(".navelt").css("font-size", "1.25em");
 		}
 	});
 		
