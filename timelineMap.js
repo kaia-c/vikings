@@ -684,7 +684,9 @@ function init(){
 					var currentPoint = currentPoints[i].id;
 					var currentPos = $("#"+currentPoint).position();
 					$("#"+currentPoint).css("top", currentPos.top/2);
-			}
+				}
+			$(".siteTitle").css("font-size", "25px");
+			$(".navelt").css("font-size", "0.75em");
 			}
 		} else {//resize to big
 			options.stack = true;
@@ -698,12 +700,10 @@ function init(){
 					$("#"+currentPoint).css("top", currentPos.top*2);
 				}
 			}
+			$(".siteTitle").css("font-size", "50px");
+			$(."navelt").css("font-size", "1.25em");
 		}
 	});
 		
-	/*
-	//generalize or just load points from initial range after I make that work
-	triggerdoIt(properties)
-	*/
 }
 document.addEventListener("DOMContentLoaded",init, false);
