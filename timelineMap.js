@@ -1,21 +1,24 @@
+//onload
 function init(){
 
+	//get window height
 	function windowHeight(){
 	return Math.min(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,
 	document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight);
 	}
 	
-	//i need a real mobile device to see what works here
-    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+	/*To do: Get access to a mobile to text otherwise use screen height...site looks ok on a tablet I might need another vs for phone
+    	var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
-    if (isMobile.matches) {
+	  if (isMobile.matches) {
         $("#myMap").after('<div class="textbox" style="left:0%;top0%">test1</div>');
 		
-    }
+    	}
 
 	if ((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)){
 	        $("#myMap").after('<div class="textbox" style="left:0%;top20%">test2</div>');
-	}
+	}*/
+	
 	var lteIE8 = false;
 	if (document.all && !document.addEventListener){
 		lteIE8 = true;
@@ -56,8 +59,8 @@ function init(){
 	var finnsBC = new dataPoint(sc, '<b>The Finns ~ Abridged BC History</b>', '0000','0099');
 	var daneBogBods = new dataPoint(sc, 'Pre-Roman Iron Age Bog Bodies in Denmark','0000','0179');	
 	var germanBogBods = new dataPoint(nw,'Iron Age+ Bog Bodies in Germanic areas', '0000', '1099');
-    var romanInfl = new dataPoint(sc,'<b>Cultural Influence in Scandinavia During Roman Iron Age</b>','0100','0550');
-    var germanIberia = new dataPoint(nw, 'Iberia Invaded by</br>Germanic Tribes','0410','0425');
+    	var romanInfl = new dataPoint(sc,'<b>Cultural Influence in Scandinavia During Roman Iron Age</b>','0100','0550');
+    	var germanIberia = new dataPoint(nw, 'Iberia Invaded by</br>Germanic Tribes','0410','0425');
 	var sami = new dataPoint(sc, 'The Sami', '0000', '1099');
 	var germanChanges =  new dataPoint(nw, 'Roman Influence on Germanic Tribes', '0000', '0200');
 	var romeLostBlSea = new dataPoint(nw, 'Rome Abandons</br>North Black Sea', '0271', '0286');
@@ -225,7 +228,6 @@ function init(){
 	var text82 = new dataInfoText("The Viking age ended nearly simultaneously with when they were converted to Christianity.</br></br>Agreeing to convert meant that the lands the Viking conquered would be legitimized as theirs by local inhabitants. The Vikings were able to settle freely, trade with local communities, and otherwise integrate into the larger European network of societies. The battlefront for European Christians shifted to the south with the rise if the Islamic Caliphate.</br></br>Back in Scandinavia, the tales of the Vikings that had been verbally handed down for generations began to be recorded in great Sagas. Scandinavia would be unified and broken apart in wars between Sweden, Norway, and occasionally Denmark  over the next centuries, but the practice of 'going viking' (used as a verb by the Scandinavians to describe the act of a raid by sea) ended.</br></br>");
 	var text83 = new dataInfoText(dataInfo[45].text);
 	
-	//finish the last few hundred years
 	
 	
 	if(!lteIE8){	
@@ -254,11 +256,13 @@ function init(){
 		var timeline = new vis.Timeline(timelineHolder, data, options); 
 		//add groups
 		timeline.setGroups(groups);
+		
 		//set initial range ...plugins setWindow function appears not to work well 
 		//before 1900 AD. Trying to work around to get data range early as possible,
-		//this yields 190 - 250 AD in Chrome - NO, BREAKS IN IE & MOZ
-		//look at source for setWindow later...may have to rewrite that
+		//this yields 190 - 250 AD in Chrome 
 		//timeline.setWindow({start:'-0220', end: '-0100',});
+		//- NO, BREAKS IN IE & MOZ
+		//look at source for setWindow later...have to figure out there code
 
 		//function moves timeline by the argument of percentage
 		function move (percentage) {
@@ -277,7 +281,7 @@ function init(){
 			move(-0.12); 
 		});
 		
-		///////////////////////////////////////////
+		///////////////////////////////////////////TO DO: Fix taphold
 		/*
 			function moveOnHold(percnt, isHeld){
 			alert(isHeld);
