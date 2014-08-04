@@ -3,39 +3,55 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Viking History Timeline</title>
-  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script> 
-  <script src="vis.js"></script>
-  <script src="jquery.mobile.custom.min.js"></script>
-  <script src="timelineMap.js"> </script>
-  <link href="timelineMap.css" rel="stylesheet" type="text/css" />
-
- </head>
-
-<body>
-<div id="outer">
-	<div id="topbar" align="center">
-		<span id="title">Interactive Timeline of Viking History</span><!--make a topbar-->
-	</div>
-
-	<div class="mapHolder" align="center">
-		<img id="myMap" src="https://cloud.githubusercontent.com/assets/8033784/3484699/e5aca1da-03b2-11e4-81d1-2c8870028d8e.jpg" alt="Map1" />	
-
-
-        <!--<br /><span id="log"></span>-->
-	</div>
-
-	<img src="https://cloud.githubusercontent.com/assets/8033784/3484805/adfc293c-03b6-11e4-922e-9500c8120b3f.png" id="moveLeft" alt="Move Timeline Left" />
-	<img src="https://cloud.githubusercontent.com/assets/8033784/3484810/b4e87a70-03b6-11e4-93b4-8ed8fb0ac58e.png" id="moveRight" alt="Move Timeline Right" />	
-
-
-	<span id="timelineHolder">
-		<div id="myTimeline"></div>
-		<div id="outputDiv"></div>
-	</span>
-
-	<!--<div id="log"></div>-->
-</div>
-
-
-</body>
+  <link href="timelineStyle.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+	<body>
+		<div id="outer">
+			<div id="topbar"><a href="index.html" id="navlink">
+				<img src="topbar.png" alt="Explore History - the Vikings" />
+				<div id="sitetitle"> The Vikings</div>
+			</a></div>
+			<div id="navholder" align="center">
+				<ul id="navbar">
+						<li class="navelt"><a href="index.html" id="navlink">Home</a></li>
+						<li class="navelt"><a href="VikingNameGenerator.html" id="navlink">Viking Name Generator</a></li>
+						<li class="navelt"><a href="timeline.html" id="navlink">Interactive Timeline</a></li>
+						<li class="navelt"><a href="saga.html" id="navlink">Play Write Your Own Saga</a></li>
+				</ul>
+			</div>
+			<div id="content" align="center">
+				<h3>Explore History - the Vikings</h3>
+				<ul>
+					<li>
+						At Explore History, we provide new tools to delve into the details of history. This site provides:</br></br>
+					</li>
+					
+					<li><a href="VikingNameGenerator.html" id="index"><strong>A Viking Name Generator</strong></a></br>
+					Find out your Viking name while learning about Viking culture.
+						<ul></br>
+							<samp><strong><li>Web Development Skills Demonstrated:</li></br></strong>
+								<ul><li>Generating content dynamically with JavaScript (and no JQuery when none is needed)</li>
+								<li>Cross Browser Compatible Development (works in Chrome, Mozilla, Opera, IE > 8)???</li>
+								<li>Form Verification and processing in JavaScript</li>
+								<li>Setting a cookie to users' Viking name</li>
+								<li>HTML & CSS</li></ul>
+						</ul></samp></br></br>			
+					</li>
+					<li>
+						<a href="timeline.html" id="index" align="center"><strong>An Interactive Timeline of the History of the Vikings + Surrounding Areas & Eras</a></strong>
+						</br>Get context to the Viking Age by seeing the major events of history mapped when in time range.</br>Understand the history of Scandinavia and surrounding areas from Europe to the Mediterranean</br>to see why the practice of "Going Viking" began, how it changed the world.</br>
+						<ul></br>
+							<samp><strong><li>Web Development Skills Demonstrated:</li></br></strong>
+								<ul><li>Generating content dynamically with JavaScript & JQuery</li>
+								<li>Cross Browser Compatible Development (works in Chrome, Mozilla, Opera, IE > 8)</li>
+								<li>Graphic Design of site graphics</li>
+								<li>Site Design (getting a huge amount of information, pictures, videos, etc. in a small page without it feeling crowded)</li>
+								<li>HTML & CSS</li></ul>
+						</ul></samp>
+					</li>					
+				</ul>
+			</div><!--end content>
+		</div><!--END outer-->
+	</body>
 </html>
