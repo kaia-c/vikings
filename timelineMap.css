@@ -43,8 +43,9 @@
 		font-weight: bold;
 		text-shadow: 6px 3px 9px rgba(0,0,0,.8);
 		font-family: serif;
-		font-size: 4em;
-		font-variant:small-caps	
+		font-size: 2em;
+		font-variant:small-caps;
+		text-decoration:none;
 	}
 	#navholder{
 		width: 100%;
