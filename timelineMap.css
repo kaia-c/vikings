@@ -1,8 +1,8 @@
 	body, html {
 		font-family: sans-serif;
 		background-color: #FFFFFF;
-    }
-	ul {
+    	}
+	content:ul, content:ul:ul, content:ul:ul:ul{
 		list-style-type: none;
 		list-style: none;
 	}
